@@ -7,12 +7,50 @@ var diamond_1_value = Math.floor(Math.random() * 19) + 1;
 var diamond_2_value = Math.floor(Math.random() * 19) + 1;
 var diamond_3_value = Math.floor(Math.random() * 19) + 1;
 var diamond_4_value = Math.floor(Math.random() * 19) + 1;
-var total_value = 0;
+total_value = 0;
 
-
-// To continue guessing
 if (total_value < random_target) {
 
+    $("#diamond_one").on("click", function() {
+        total_value = total_value + diamond_1_value;
+            console.log ("total value:" + total_value);
+            $("#total_value").html("Total Value: "+total_value);
+            $("#target_no").html("Target Number: "+random_target);
+         })
+    
+    $("#diamond_two").on("click", function() {
+        total_value = total_value + diamond_2_value;
+            console.log ("total value:" + total_value);
+            $("#total_value").html("Total Value: "+total_value)
+            $("#target_no").html("Target Number: "+random_target);
+        })
+    
+    $("#diamond_three").on("click", function() {
+        total_value = total_value + diamond_3_value;
+                    console.log ("total value:" + total_value);
+                    $("#total_value").html("Total Value: "+total_value)
+                    $("#target_no").html("Target Number: "+random_target);
+                })
+            
+    $("#diamond_four").on("click", function() {
+        total_value = total_value + diamond_4_value;
+                    console.log ("total value:" + total_value);
+                    $("#total_value").html("Total Value: "+total_value)
+                    $("#target_no").html("Target Number: "+random_target);
+                })
+
+            }
+         
+
+// To determine if game should continue.
+if (random_target === total_value) {
+    wins = wins++
+    console.log ("wins"+wins);
+    $("#wins_no").html("Wins: "+wins)
+
+
+if (total_value <= random_target) {
+   
 
     
 } 
@@ -21,13 +59,24 @@ if (total_value < random_target) {
 else if
 
     (total_value > random_target) {
-
+        losses = losses++
+        console.log ("losses"+losses);
+        $("#losses_no").html("Losses: "+losses)
     }
     
 
 
 // to mark as a win
-
-else if (total_value == random_target) {
-wins = wins++
+if (total_value === random_target) {
+    console.log ("win")
+    
 }
+
+}
+
+// to keep track of total score and make diamonds clickable
+
+
+
+
+
